@@ -1,17 +1,18 @@
-import './App.css';
-import { Component } from 'react';
-import Todos from './components/Todos';
+import React from "react";
+import Header from './components/Header'
+import Description from './components/Description'
+import Social from "./components/Social";
 
-class App extends Component {
-    render(){
-        return (
-            <Todos />
-        )
+function App() {
+    return (
+        <div>
+            <Header />
+            <Description />
+            <Social />
 
-    };
- 
+        </div>
+
+    );
 }
 
 export default App;
-
-
