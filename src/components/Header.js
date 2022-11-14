@@ -1,9 +1,12 @@
 import React from "react";
 
+
 function Header() {
-    return (<h1 style={
-        { color: 'red', fontSize: '70px', backgroundColor: 'green' }
-    }>Design is my life</h1>);
+    return (
+    <div className="navbar bg-primary">
+         <h1 >Design is my life</h1>
+    </div>
+   );
 }
 
 export default Header;
