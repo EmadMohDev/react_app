@@ -5,7 +5,7 @@ import Social from "./components/Social";
 
 function App() {
     return (
-        <div>
+        <div className="container mt-5">
             <Header />
             <Description />
             <Social />
