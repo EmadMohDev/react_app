@@ -1,18 +1,23 @@
-import React from "react";
+import React , {Component} from 'react'
 import Header from './components/Header'
-import Description from './components/Description'
-import Social from "./components/Social";
+import Team from './components/Team'
 
-function App() {
+export default class App extends Component {
+    constructor(){
+        super()
+        this.state = {answer: "Yes"}
+    }
+
+
+  render() {
+
+   
     return (
-        <div className="container mt-5">
-            <Header />
-            <Description />
-            <Social />
-
+        <div className="container mt-3">
+           <Header />
+           <Team />
+          
         </div>
-
-    );
+    )
+  }
 }
-
-export default App;
