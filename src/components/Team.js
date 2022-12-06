@@ -1,28 +1,63 @@
 import React, { Component } from 'react'
 import TeamMember from './TeamMember';
+import membersInfo from './membersInfo'
 
 export default class Team extends Component {
+
+  constructor(){
+    super() 
+    // make data by state
+    this.state = {
+      counter: 0,
+       info: membersInfo, 
+       newInfo: []
+    }
+    // this code will bind "this" to any function declare between constructor() and render()  like  clickHandler()
+    this.clickHandler = this.clickHandler.bind(this)
+
+  
+
+  }
+
+
+  clickHandler() {
+    console.log('clicked')
+   
+
+    if(this.state.counter  < this.state.info.length ){
+
+      this.setState((prevState) => {  // prevState can be called anything 
+        return { 
+          counter: prevState.counter + 1  
+               }
+    })
+
+    console.log(this.state.counter)
+
+      this.state.newInfo.push(membersInfo[this.state.counter ]) 
+      console.log(this.state.newInfo)
+    }
+    
+    
+}
+
+  mapping(data){
+  return  data.map(member =>  <TeamMember   key={member.id}  info={member}  />   )
+
+  }
+
+
+
   render() {
 
-    const info =
-    [
-        {id:1, img:'/images/01.jpg',    name:'Walter White',    position:'Bryan Cranston',      phone:'+49 12345678',   email:'walter@b-bad.com',   website:'walterwhite.com'   },
-        {id:2, img:'/images/02.jpg',    name:'Jesse Pinkman',   position:'Aaron Paul',          phone:'+49 12345678',   email:'jesse@b-bad.com',    website:'jessepinkman.com'  },
-        {id:3, img:'/images/03.jpg',    name:'Skyler White',    position:'Anna Gunn',           phone:'+49 12345678',   email:'skyler@b-bad.com',   website:'skylerwhite.com'   },
-        {id:4, img:'/images/04.jpg',    name:'Gus Fring',       position:'Giancarlo Esposito',  phone:'+49 12345678',   email:'gus@b-bad.com'                                   },
-        {id:5, img:'/images/05.jpg',    name:'Saul Goodman',    position:'Bob Odenkirk',        phone:'+49 12345678',   email:'saul@b-bad.com'                                  },
-        {id:6, img:'/images/06.jpg',    name:'Hank Schrader',   position:'Dean Norris',         phone:'+49 12345678',   email:'hank@b-bad.com'                                  },
-    ] ;
-    
-    
-    const members  =   info.map( member =>
-          <TeamMember   key={member.id}  info={member}  />
-     );
- 
-     
+     const members  =  this.mapping(this.state.newInfo)
+
 
     return (
-        <div className='row'>
+      <div className='row'>
+          <button className='btn btn-primary btn-lg' onClick={this.clickHandler} >Add More Actor </button>
+          {/* <h1>{this.state.counter}</h1> */}
+        
         {members} 
     </div>
     )

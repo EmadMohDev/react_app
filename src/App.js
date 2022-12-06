@@ -16,7 +16,6 @@ export default class App extends Component {
         <div className="container mt-3">
            <Header />
            <Team />
-          
         </div>
     )
   }
