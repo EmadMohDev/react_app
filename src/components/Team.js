@@ -55,7 +55,8 @@ export default class Team extends Component {
 
     return (
       <div className='row'>
-          <button className='btn btn-primary btn-lg' onClick={this.clickHandler} >Add More Actor </button>
+            <button className='btn btn-primary btn-lg' onClick={this.clickHandler} >Add More Actor </button>
+          
           {/* <h1>{this.state.counter}</h1> */}
         
         {members} 

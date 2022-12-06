@@ -14,7 +14,7 @@ export default class App extends Component {
    
     return (
         <div className="container mt-3">
-           <Header />
+           {/* <Header /> */}
            <Team />
         </div>
     )
