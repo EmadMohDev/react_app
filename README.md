@@ -38,3 +38,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - here we use class component , state and events to apply this
 
+✔Technologies : JavaScript + Html + React
+
+
+
